@@ -1,17 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <NavBar />
+    <div id="content">
+      <router-view /> <!-- 动态渲染路由对应的页面内容 -->
+    </div>
+    <Footer /> 
   </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import NavBar from './components/NavBar.vue'
+import Footer from './components/FootBar.vue'
 export default {
-  name: 'App',
+  name:"APP",
+  data() {
+    return {
+      
+    };
+  },
   components: {
-    HelloWorld
+    NavBar,
+    Footer
+  },
+  methods: {
+   
   }
 }
 </script>
@@ -22,7 +33,8 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  
+  background-color: #ffffff;
+  margin-top: 75px;
 }
 </style>
