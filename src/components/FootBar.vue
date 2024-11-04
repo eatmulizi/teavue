@@ -97,6 +97,7 @@ export default {
 .footer-section ul {
   list-style: none;
   padding: 0;
+
 }
 
 .footer-section ul li {
