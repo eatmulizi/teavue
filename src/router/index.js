@@ -64,8 +64,8 @@ const routes = [
     }
   },
   {
-    path: '/history',
-    name: 'history',
+    path: '/QiJia',
+    name: 'QiJia',
      component: QiJia,
     props: { 
      

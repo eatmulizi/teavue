@@ -51,7 +51,7 @@
                   <p>三百年戚家传承</p>
                 </router-link>
                 <router-link
-                  to="/history"
+                  to="/QiJia"
                   @click.native="hideDropdown"
                   class="dropdown-item"
                 >
@@ -134,9 +134,9 @@ export default {
       // 这里可以进行异步请求数据
       // 例如，使用 fetch 或 axios 请求数据
       this.dropdownData = [
-        { name: '内容 1', link: '/page1' },
+        { name: '内容 1', link: '/chinagongbrand' },
         { name: '内容 2', link: '/maps' },
-        { name: '内容 3', link: '/history' },
+        { name: '内容 3', link: '/QiJia' },
         { name: '内容 4', link: '/page4' }
       ];
     }
