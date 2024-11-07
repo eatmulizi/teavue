@@ -33,40 +33,40 @@
             <div class="dropdown-content" :class="{ show: showDropdown }">
               <div class="dropdown-items">
                 <router-link
-                  to="/page1"
+                  to="/nationalgift"
                   @click.native="hideDropdown"
                   class="dropdown-item"
                 >
-                  <img :src="require('@/assets/lunbo1.jpg')" alt="Image 1" />
-                  <h4>国礼贡牌</h4>
-                  <p>三百年戚家传承</p>
+                  <img :src="require('@/assets/image/public/chinatea-null.png')" alt="Image 1" />
+                  <h4>中国贡牌</h4>
+                  <p>匠心铸茶 经典传承</p>
                 </router-link>
                 <router-link
                   to="/maps"
                   @click.native="hideDropdown"
                   class="dropdown-item"
                 >
-                  <img :src="require('@/assets/lunbo1.jpg')" alt="Image 2" />
+                  <img :src="require('@/assets/image/public/chinatea-null.png')" alt="Image 2" />
                   <h4>龙井贡源</h4>
-                  <p>三百年戚家传承</p>
+                  <p>西湖之域 龙井正宗</p>
                 </router-link>
                 <router-link
                   to="/QiJia"
                   @click.native="hideDropdown"
                   class="dropdown-item"
                 >
-                  <img :src="require('@/assets/lunbo2.jpg')" alt="Image 3" />
+                  <img :src="require('@/assets/image/public/chinatea-null.png')" alt="Image 3" />
                   <h4>戚家传承</h4>
-                  <p>三百年戚家传承</p>
+                  <p>百年传承 非遗技艺</p>
                 </router-link>
                 <router-link
                   to="/page4"
                   @click.native="hideDropdown"
                   class="dropdown-item"
                 >
-                  <img :src="require('@/assets/lunbo3.jpg')" alt="Image 4" />
-                  <h4>其他信息</h4>
-                  <p>描述信息</p>
+                  <img :src="require('@/assets/image/public/chinatea-null.png')" alt="Image 4" />
+                  <h4>国礼贡牌</h4>
+                  <p>国礼尊荣  盛誉八方</p>
                 </router-link>
               </div>
             </div>
