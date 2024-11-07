@@ -5,40 +5,78 @@
   
       <div class="product-grid">
         <div class="product-card" v-for="(product, index) in products" :key="index">
-          <img :src="require(`@/assets/${product.image}`)" :alt="product.name" class="product-image" />
+          <!-- <img :src="require(`@/assets/${product.image}`)" :alt="product.name" class="product-image" /> -->
+          <router-link :to="{ name: 'ProductDetail', params: { name: product.name } }">
+          <img :src="product.picture64"  :alt="product.name" class="product-image" />
+        </router-link>
           <div class="product-title-price">
             <h3 class="product-title">{{ product.name }}</h3>
             <p class="product-price">¥ {{ product.price }}</p>
           </div>
-          <p class="product-spec">{{ product.spec }}</p>
+          <p class="product-spec">{{ product.guige }}</p>
         </div>
         
       </div>
-      <div class="button-container">
-        <button class="show-more" @click="showMoreProducts">显示全部产品</button>
-        </div>
+
+      <div class="button-container" v-if="storeproducts.length > 3">
+      <button class="show-more" @click="showMore" v-if="!showAll">
+        显示全部产品
+      </button>
+    </div>
+      
     </div>
   </template>
   
   <script>
+  import axios from 'axios';
   export default {
     data() {
       return {
         products: [
-          { name: '狮峰龙井系列·精品', price: '18000', spec: '礼盒 50g 5g*10', image: 'product1.png' },
-          { name: '狮峰龙井系列·精品', price: '18000', spec: '礼盒 50g 5g*10', image: 'product1.png' },
-          { name: '狮峰龙井系列·精品', price: '18000', spec: '礼盒 50g 5g*10', image: 'product1.png' },
-          { name: '狮峰龙井系列·精品', price: '18000', spec: '礼盒 50g 5g*10', image: 'product1.png' },
-          { name: '狮峰龙井系列·精品', price: '18000', spec: '礼盒 50g 5g*10', image: 'product1.png' },
-          { name: '狮峰龙井系列·精品', price: '18000', spec: '礼盒 50g 5g*10', image: 'product1.png' }
-        ]
+          
+        ],
+        storeproducts:[],
+        showAll: false, 
       };
     },
+    created() {
+    // 在组件初始化时调用 API
+     this.fetchProductData();
+
+ 
+    
+  },
+  computed: {
+    displayedProducts() {
+      // 根据 showAll 状态决定显示的产品数量
+      
+      
+    },
+  },
     methods: {
       showMoreProducts() {
         // 在这里实现显示更多产品的逻辑
         console.log('显示更多产品');
+      },
+      showMore() {
+      this.showAll = !this.showAll;
+      this.products = this.storeproducts;
+    },
+      async fetchProductData() {
+      try {
+        const response = await axios.get(`http://localhost:3000/api/searchAll`, );
+        this.storeproducts = response.data.result;
+        if (this.storeproducts.length <4){
+          this.products = this.storeproducts
+        }else{
+          this.products = this.storeproducts.slice(0,3);
+        }
+       
+       
+      } catch (error) {
+        console.error('Error fetching product data:', error);
       }
+    },
     }
   };
   </script>

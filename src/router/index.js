@@ -6,6 +6,8 @@ import ProductDetail from '@/components/ProductDetail.vue';
 import ProductAll from '@/components/ProductAll.vue';
 import TeaMap from '@/components/TeaMap.vue';
 import QiJia from '@/components/QiJia.vue';
+import Demo from '@/components/DemoMo.vue';
+import UploadPicture from '@/components/UploadPicture.vue';
 Vue.use(Router);
 const routes = [
   { path: '/', redirect: '/home' },
@@ -20,6 +22,17 @@ const routes = [
   {
     path: '/product',
     name: 'product',
+    component: ProductDetail,
+    // component: PageContent,
+    props: { 
+     
+      
+    }
+  },
+  
+  {
+    path: '/product/:name',
+    name: 'ProductDetail',
     component: ProductDetail,
     // component: PageContent,
     props: { 
@@ -72,6 +85,26 @@ const routes = [
       
     }
   },
+  {
+    path: '/demo',
+    name: 'demo',
+     component: Demo,
+    props: { 
+     
+      
+    }
+  },
+
+  {
+    path: '/upload',
+    name: 'upload',
+     component: UploadPicture,
+    props: { 
+     
+      
+    }
+  },
+
 
 ]
 
