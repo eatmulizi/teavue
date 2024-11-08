@@ -26,6 +26,9 @@
     <div class="footer-bottom">
       <img :src="footline" alt="Longjing Tea Logo"/>
     </div>
+    <div class="footer-bottom-logo">
+      <img :src="footlogo" alt="Longjing Tea Logo"/>
+    </div>
   </div>
 </template>
 
@@ -55,8 +58,9 @@ export default {
           items: ['商务合作', '加入我们']
         }
       ],
-      companyLogo: require('@/assets/companylog.png'),
-      footline: require('@/assets/bottomline.png')
+      companyLogo: require('@/assets/image/public/logo-bottom.png'),
+      footline: require('@/assets/image/public/bottom-line.png'),
+      footlogo:require('@/assets/image/public/logo_group_bottom.png')
     };
   }
 }
@@ -79,8 +83,8 @@ export default {
 .footer-section {
   text-align: left;
   border-right: 1px solid rgba(0, 0, 0, 0.5);;
-  padding-right: 100px;
-  margin-right: 30px;
+  flex:1;
+  padding-left:3%;
 }
 
 .footer-section:last-child {
@@ -113,7 +117,7 @@ export default {
 
 .footer-logo {
   position: absolute;
-  margin-top: -40px;
+  margin-top: 40px;
   right: 450px; /* 设置为右侧对齐 */
   width: 50px; /* 调整图片大小 */
   height:40px;
@@ -136,5 +140,9 @@ export default {
 
 .buy-links img:hover {
   opacity: 0.8;
+}
+.footer-bottom-logo{
+  margin-top:2%;
+  float: left;
 }
 </style>

@@ -7,6 +7,8 @@ import ProductAll from '@/components/ProductAll.vue';
 import TeaMap from '@/components/TeaMap.vue';
 import QiJia from '@/components/QiJia.vue';
 import nationalgift from '@/components/nationalgift.vue';
+import chinagongbrand from '@/components/chinagongbrand.vue';
+
 Vue.use(Router);
 const routes = [
   { path: '/', redirect: '/home' },
@@ -68,6 +70,15 @@ const routes = [
     path: '/QiJia',
     name: 'QiJia',
      component: QiJia,
+    props: { 
+     
+      
+    }
+  },
+  {
+    path: '/chinagongbrand',
+    name: 'chinagongbrand',
+     component: chinagongbrand,
     props: { 
      
       

@@ -33,7 +33,7 @@
             <div class="dropdown-content" :class="{ show: showDropdown }">
               <div class="dropdown-items">
                 <router-link
-                  to="/nationalgift"
+                  to="/chinagongbrand"
                   @click.native="hideDropdown"
                   class="dropdown-item"
                 >
@@ -60,7 +60,7 @@
                   <p>百年传承 非遗技艺</p>
                 </router-link>
                 <router-link
-                  to="/page4"
+                  to="/nationalgift"
                   @click.native="hideDropdown"
                   class="dropdown-item"
                 >
@@ -209,7 +209,7 @@ export default {
 .dropdown-item {
   flex: 1; /* 每个链接占据相同的宽度 */
   text-align: center; /* 文本居中 */
-  margin: 0 10px; /* 每个链接之间的间距 */
+  margin: 25px 25px; /* 每个链接之间的间距 */
 }
 
 .dropdown-content img {
