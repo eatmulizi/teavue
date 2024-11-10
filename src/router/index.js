@@ -8,6 +8,7 @@ import TeaMap from '@/components/TeaMap.vue';
 import QiJia from '@/components/QiJia.vue';
 import Demo from '@/components/DemoMo.vue';
 import UploadPicture from '@/components/UploadPicture.vue';
+import NewsPublic from '@/components/NewsPublic.vue';
 Vue.use(Router);
 const routes = [
   { path: '/', redirect: '/home' },
@@ -52,7 +53,7 @@ const routes = [
   {
     path: '/media',
     name: 'media',
-    // component: PageContent,
+    component: NewsPublic,
     props: { 
      
       

@@ -177,14 +177,14 @@
     onScroll() {
       const scrollY = window.scrollY;
       if (scrollY >= 2000) {
-        // 超过1000px后，整体滚动
+       
         this.wholePageScroll = true;
         this.imageOffset = scrollY;
         this.contentOffset = scrollY;
       } else {
-        // 在1000px以下时，恢复左侧先滚动效果
+        
         this.wholePageScroll = false;
-        this.imageOffset = scrollY *0.1;  // 左侧滚动更慢
+         this.imageOffset = scrollY *0.1;  // 左侧滚动更慢
          this.contentOffset = scrollY;
       }
     }
