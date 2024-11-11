@@ -105,6 +105,28 @@ export default {
 </script>
 
 <style scoped>
+img {
+  max-width: 100%; /* 图像宽度最大为 100% */
+  height: auto; /* 自动调整高度以保持宽高比 */
+}
+h1 {
+  text-align: left;
+  font-family: 'Heavy', sans-serif;
+  font-weight: 900; /* 使用 Heavy 字体 */
+  font-size: 25px;
+}
+h2 {
+  text-align: left;
+  font-family: 'Bold', sans-serif;
+  font-weight: 700; /* 使用 Bold 字体 */
+  font-size: 25px;
+}
+p {
+  text-align: left;
+  letter-spacing: 0.08em;
+  line-height: 1.8;
+  font-family: 'Light';
+}
 .image-container {
   display: flex;
   flex-direction: column; /* 使图片竖向排列 */

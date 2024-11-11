@@ -10,11 +10,12 @@
 <script>
 import NavBar from './components/NavBar.vue'
 import Footer from './components/FootBar.vue'
+
 export default {
   name:"APP",
   data() {
     return {
-      
+
     };
   },
   components: {

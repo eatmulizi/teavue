@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'Light'; /* 自定义字体名称 */
+    src: url('@/assets/fonts/HarmonyOS_Sans_SC_Light.ttf') format('truetype'); /* Light 字体 */
+    font-weight: 300; /* Light 字体粗细 */
+    font-style: normal; /* 字体样式 */
+}
+
+@font-face {
+    font-family: 'Medium';
+    src: url('@/assets/fonts/SourceHanSerifSC-Medium.otf') format('truetype'); /* Medium 字体 */
+    font-weight: 600; /* Medium 字体粗细 */
+    font-style: normal; /* 字体样式 */
+}
+
+@font-face {
+    font-family: 'Bold';
+    src: url('@/assets/fonts/HarmonyOS_Sans_SC_Bold.ttf') format('truetype'); /* Bold 字体 */
+    font-weight: 700; /* Bold 字体粗细 */
+    font-style: normal;  /*字体样式 */
+}
+
+@font-face {
+    font-family: 'Heavy';
+    src: url('@/assets/fonts/SourceHanSerifSC-Heavy.otf') format('truetype'); /* Heavy 字体 */
+    font-weight: 900; /* Heavy 字体粗细 */
+    font-style: normal; /* 字体样式 */
+}
+
+/* 可以在这里定义全局样式 */
+body {
+    font-family: 'Heavy','Light','Medium','Bold', sans-serif; /* 使用自定义字体 */
+}

@@ -38,7 +38,7 @@
                   class="dropdown-item"
                 >
                   <img :src="require('@/assets/image/public/chinatea-null.png')" alt="Image 1" />
-                  <h4>中国贡牌</h4>
+                  <h3>中国贡牌</h3>
                   <p>匠心铸茶 经典传承</p>
                 </router-link>
                 <router-link
@@ -47,7 +47,7 @@
                   class="dropdown-item"
                 >
                   <img :src="require('@/assets/image/public/chinatea-null.png')" alt="Image 2" />
-                  <h4>龙井贡源</h4>
+                  <h3>龙井贡源</h3>
                   <p>西湖之域 龙井正宗</p>
                 </router-link>
                 <router-link
@@ -56,7 +56,7 @@
                   class="dropdown-item"
                 >
                   <img :src="require('@/assets/image/public/chinatea-null.png')" alt="Image 3" />
-                  <h4>戚家传承</h4>
+                  <h3>戚家传承</h3>
                   <p>百年传承 非遗技艺</p>
                 </router-link>
                 <router-link
@@ -65,7 +65,7 @@
                   class="dropdown-item"
                 >
                   <img :src="require('@/assets/image/public/chinatea-null.png')" alt="Image 4" />
-                  <h4>国礼贡牌</h4>
+                  <h3>国礼贡牌</h3>
                   <p>国礼尊荣  盛誉八方</p>
                 </router-link>
               </div>
@@ -137,7 +137,7 @@ export default {
         { name: '内容 1', link: '/chinagongbrand' },
         { name: '内容 2', link: '/maps' },
         { name: '内容 3', link: '/QiJia' },
-        { name: '内容 4', link: '/page4' }
+        { name: '内容 4', link: '/nationalgift' }
       ];
     }
   },
@@ -152,6 +152,26 @@ export default {
 </script>
 
 <style scoped>
+h1 {
+  font-family: "Heavy", sans-serif;
+  font-weight: 900; /* 使用 Heavy 字体 */
+  font-size: 25px;
+}
+h2 {
+  font-family: "Bold", sans-serif;
+  font-weight: 700; /* 使用 Bold 字体 */
+  font-size: 25px;
+}
+h3{
+  font-family: "Medium", sans-serif;
+  font-weight: 600; /* 使用 Medium 字体 */
+  font-size: 20px;
+  color:#214815;
+}
+p {
+  letter-spacing: 0.08em;
+  line-height: 1.8;
+}
 .navbar-brand {
   font-size: 30px;
   color: #e9d48d;
@@ -186,8 +206,7 @@ export default {
   width: 100%; /* 设置为100%以适应父元素 */
   max-height: 0; /* 初始状态下的最大高度为0 */
   padding: 0; /* 内边距 */
-  border-radius: 8px; /* 圆角 */
-  background-color: rgba(255, 255, 255, 0.9); /* 背景颜色 */
+  background-color: rgb(255, 255, 255); /* 背景颜色 */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* 阴影效果 */
   z-index: 1000; /* 确保在其他内容之上 */
   overflow: hidden; /* 隐藏溢出内容 */

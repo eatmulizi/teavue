@@ -1,5 +1,8 @@
 <template>
   <div class="footer-container">
+    <div class="footer-top">
+      <img :src="footline" alt="footline" />
+    </div>
     <div class="footer-content">
       <div
         class="footer-section"
@@ -19,15 +22,15 @@
         </ul>
       </div>
       <div class="footer-logo">
-      <img :src="companyLogo" alt="Longjing Tea Logo"/>
-    </div>
+        <img :src="companyLogo" alt="Longjing Tea Logo" />
+      </div>
     </div>
 
     <div class="footer-bottom">
-      <img :src="footline" alt="Longjing Tea Logo"/>
+      <img :src="footline" alt="Longjing Tea Logo" />
     </div>
     <div class="footer-bottom-logo">
-      <img :src="footlogo" alt="Longjing Tea Logo"/>
+      <img :src="footlogo" alt="Longjing Tea Logo" />
     </div>
   </div>
 </template>
@@ -38,53 +41,81 @@ export default {
     return {
       sections: [
         {
-          title: '贡牌西湖龙井',
-          items: ['中国贡牌', '龙井贡源', '戚家传承', '国礼贡牌']
+          title: "贡牌西湖龙井",
+          items: ["中国贡牌", "龙井贡源", "戚家传承", "国礼贡牌"],
         },
         {
-          title: '产品中心',
-          items: ['狮峰龙井系列', '西湖龙井系列', '龙井茶系列', '其他茗茶']
+          title: "产品中心",
+          items: ["狮峰龙井系列", "西湖龙井系列", "龙井茶系列", "其他茗茶"],
         },
         {
-          title: '招商加盟',
-          items: ['加盟政策', '门店地图']
+          title: "招商加盟",
+          items: ["加盟政策", "门店地图"],
         },
         {
-          title: '媒体聚焦',
-          items: ['新闻发布', '媒体报道', '社交媒体']
+          title: "媒体聚焦",
+          items: ["新闻发布", "媒体报道", "社交媒体"],
         },
         {
-          title: '联系我们',
-          items: ['商务合作', '加入我们']
-        }
+          title: "联系我们",
+          items: ["商务合作", "加入我们"],
+        },
       ],
-      companyLogo: require('@/assets/image/public/logo-bottom.png'),
-      footline: require('@/assets/image/public/bottom-line.png'),
-      footlogo:require('@/assets/image/public/logo_group_bottom.png')
+      companyLogo: require("@/assets/image/public/logo-bottom.png"),
+      footline: require("@/assets/image/public/bottom-line.png"),
+      footlogo: require("@/assets/image/public/logo_group_bottom.png"),
     };
-  }
-}
+  },
+};
 </script>
 
 <style scoped>
+h1 {
+  font-family: "Heavy";
+  font-weight: 800; /* 使用 Heavy 字体 */
+}
+
+h2 {
+  font-family: "Medium";
+  font-weight: 302; /* 使用 Medium 字体 */
+}
+
+h3 {
+  font-family: "Bold";
+  font-weight: 1000; /* 使用 bold 字体 */
+  font-size:1.2em !important;
+}
+p {
+  font-family: "Light";
+  font-weight: 300; /* 使用 Light 字体 */
+}
 .footer-container {
-  padding: 20px 0;
+  overflow: hidden;
+  margin-top: 3%;
+  margin-left: 6.5%;
+  margin-right: 6.5%;
+  margin-bottom: 5%;
   text-align: center;
-  width: 66.6%;
-  margin-left: 50px;
+  flex-direction: column; /* 垂直排列 */
 }
 
 .footer-content {
+  margin-left:-2%;
   display: flex;
-  justify-content: flex-start;
-  padding-bottom: 20px;
+  justify-content: space-between; /* 水平分布 */
+  padding-top:5%;
+  padding-bottom: 5%;
+  width: 70%;
+}
+.footer-top {
+  width: 100%;
 }
 /* 改的是列间距 */
 .footer-section {
   text-align: left;
-  border-right: 1px solid rgba(0, 0, 0, 0.5);;
-  flex:1;
-  padding-left:3%;
+  border-right: 1px solid rgba(0, 0, 0, 0.5);
+  flex: 1;
+  padding-left: 3%;
 }
 
 .footer-section:last-child {
@@ -95,20 +126,19 @@ export default {
   font-size: 24px;
   color: #000;
   font-weight: bold;
-  margin-bottom: 40px;
+  margin-bottom: 5%;
 }
 
 .footer-section ul {
   list-style: none;
   padding: 0;
-
 }
 
 .footer-section ul li {
   color: #214815;
   margin-bottom: 10px;
   cursor: pointer;
-  font-size: 24px;
+  font-size: 14px;
 }
 
 .footer-section ul li:hover {
@@ -116,15 +146,16 @@ export default {
 }
 
 .footer-logo {
+  overflow: auto;
   position: absolute;
-  margin-top: 40px;
-  right: 450px; /* 设置为右侧对齐 */
-  width: 50px; /* 调整图片大小 */
-  height:40px;
+  padding-left: 75%;
 }
 
 .footer-bottom {
-  height: 10px;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 3%;
+  margin-top: 3%;
 }
 
 .buy-links {
@@ -141,8 +172,8 @@ export default {
 .buy-links img:hover {
   opacity: 0.8;
 }
-.footer-bottom-logo{
-  margin-top:2%;
+.footer-bottom-logo {
+  margin-top: 2%;
   float: left;
 }
 </style>
