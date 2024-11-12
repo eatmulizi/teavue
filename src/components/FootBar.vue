@@ -9,13 +9,13 @@
         v-for="section in sections"
         :key="section.title"
       >
-        <h3>{{ section.title }}</h3>
+        <h2>{{ section.title }}</h2>
         <ul>
           <li v-for="item in section.items" :key="item">{{ item }}</li>
         </ul>
       </div>
       <div class="footer-section">
-        <h3>立即购买</h3>
+        <h2>立即购买</h2>
         <ul class="buy-links">
           <!-- <li><img src="@/assets/jd.png" alt="JD"></li>
           <li><img src="@/assets/tmall.png" alt="Tmall"></li> -->
@@ -71,23 +71,32 @@ export default {
 
 <style scoped>
 h1 {
-  font-family: "Heavy";
-  font-weight: 800; /* 使用 Heavy 字体 */
+  font-family: "Heavy", sans-serif;
+  font-weight: 900; /* 使用 Heavy 字体 */
+  font-size: 30px;
+  text-align: left;
+  letter-spacing: 0.09em;
 }
-
 h2 {
-  font-family: "Medium";
-  font-weight: 302; /* 使用 Medium 字体 */
+  font-family: "Bold", sans-serif;
+  font-weight: 700; /* 使用 Bold 字体 */
+  font-size: 21px;
+  text-align: left;
+  letter-spacing: 0.09em;
+  line-height: 1.8;
 }
-
 h3 {
-  font-family: "Bold";
-  font-weight: 1000; /* 使用 bold 字体 */
-  font-size:1.2em !important;
+  font-family: "Medium", sans-serif;
+  font-weight: 600; /* 使用 Medium 字体 */
+  font-size: 21px;
+  color: #214815;
 }
 p {
+  letter-spacing: 0.09em;
+  line-height: 1.8;
   font-family: "Light";
-  font-weight: 300; /* 使用 Light 字体 */
+  text-align: left;
+  font-size: 21px;
 }
 .footer-container {
   overflow: hidden;
@@ -138,7 +147,7 @@ p {
   color: #214815;
   margin-bottom: 10px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .footer-section ul li:hover {
@@ -154,8 +163,7 @@ p {
 .footer-bottom {
   width: 100%;
   overflow: hidden;
-  margin-bottom: 3%;
-  margin-top: 3%;
+  margin-bottom: 1%;
 }
 
 .buy-links {

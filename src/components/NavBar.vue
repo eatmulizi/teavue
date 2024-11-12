@@ -38,7 +38,7 @@
                   class="dropdown-item"
                 >
                   <img :src="require('@/assets/image/public/chinatea-null.png')" alt="Image 1" />
-                  <h3>中国贡牌</h3>
+                  <h3 class="navh3">中国贡牌</h3>
                   <p>匠心铸茶 经典传承</p>
                 </router-link>
                 <router-link
@@ -47,7 +47,7 @@
                   class="dropdown-item"
                 >
                   <img :src="require('@/assets/image/public/chinatea-null.png')" alt="Image 2" />
-                  <h3>龙井贡源</h3>
+                  <h3 class="navh3">龙井贡源</h3>
                   <p>西湖之域 龙井正宗</p>
                 </router-link>
                 <router-link
@@ -56,7 +56,7 @@
                   class="dropdown-item"
                 >
                   <img :src="require('@/assets/image/public/chinatea-null.png')" alt="Image 3" />
-                  <h3>戚家传承</h3>
+                  <h3 class="navh3">戚家传承</h3>
                   <p>百年传承 非遗技艺</p>
                 </router-link>
                 <router-link
@@ -65,7 +65,7 @@
                   class="dropdown-item"
                 >
                   <img :src="require('@/assets/image/public/chinatea-null.png')" alt="Image 4" />
-                  <h3>国礼贡牌</h3>
+                  <h3 class="navh3">国礼贡牌</h3>
                   <p>国礼尊荣  盛誉八方</p>
                 </router-link>
               </div>
@@ -171,6 +171,7 @@ h3{
 p {
   letter-spacing: 0.08em;
   line-height: 1.8;
+  font-family: 'Light';
 }
 .navbar-brand {
   font-size: 30px;
@@ -179,6 +180,9 @@ p {
 .navbar-brand img {
   pointer-events: none;
   height: 50px;
+}
+.navh3{
+  margin-top:3%;
 }
 #logo_group{
   padding-top: 1%;

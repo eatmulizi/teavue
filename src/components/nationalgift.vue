@@ -304,7 +304,7 @@ p {
   overflow: auto;
   width: 100%;
   height: auto;
-  margin-top: 46.2%;
+  margin-top: 43%;
   margin-bottom: 5%;
 }
 .content-right-2 {
