@@ -9,6 +9,9 @@ import QiJia from '@/components/QiJia.vue';
 import Demo from '@/components/DemoMo.vue';
 import UploadPicture from '@/components/UploadPicture.vue';
 import NewsPublic from '@/components/NewsPublic.vue';
+import TestEffect from '@/components/TestEffect.vue';
+import DetailNew from '@/components/DetailNew.vue';
+import ProductNew from '@/components/ProductNew.vue';
 Vue.use(Router);
 const routes = [
   { path: '/', redirect: '/home' },
@@ -18,7 +21,16 @@ const routes = [
     component: Gongpai,
     props: { images: [] }
   },
- 
+  {
+    path: '/detail',
+    name: 'detail',
+    component: DetailNew,
+    // component: PageContent,
+    props: { 
+     
+      
+    }
+  },
   
   {
     path: '/product',
@@ -30,7 +42,16 @@ const routes = [
       
     }
   },
-  
+  {
+    path: '/test',
+    name: 'test',
+    component: TestEffect,
+    // component: PageContent,
+    props: { 
+     
+      
+    }
+  },
   {
     path: '/product/:name',
     name: 'ProductDetail',
@@ -100,6 +121,16 @@ const routes = [
     path: '/upload',
     name: 'upload',
      component: UploadPicture,
+    props: { 
+     
+      
+    }
+  },
+
+  {
+    path: '/allproduct',
+    name: 'allproduct',
+     component: ProductNew,
     props: { 
      
       

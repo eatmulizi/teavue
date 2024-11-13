@@ -7,7 +7,14 @@
         <div class="product-card" v-for="(product, index) in products" :key="index">
           <!-- <img :src="require(`@/assets/${product.image}`)" :alt="product.name" class="product-image" /> -->
           <router-link :to="{ name: 'ProductDetail', params: { name: product.name } }">
-          <img :src="product.picture64"  :alt="product.name" class="product-image" />
+            <img 
+            :src="hoveredIndex === index ? products2[index].picture64 : product.picture64" 
+            :alt="product.name" 
+            class="product-image" 
+            @mouseenter="hoveredIndex = index" 
+            @mouseleave="hoveredIndex = null" 
+          />
+          <!-- <img :src="product.picture64"  :alt="product.name" class="product-image" /> -->
         </router-link>
           <div class="product-title-price">
             <h3 class="product-title">{{ product.name }}</h3>
@@ -32,8 +39,15 @@
   export default {
     data() {
       return {
+        hoveredIndex: null, 
         products: [
           
+        ],
+        products2:[
+        { picture64: require('@/assets/产品3.png') },
+        { picture64: require('@/assets/产品1.png') },
+        { picture64: require('@/assets/产品2.png') },
+        { picture64: require('@/assets/产品3.png') },
         ],
         storeproducts:[],
         showAll: false, 
@@ -109,6 +123,7 @@
     width: 100%;
     height: auto;
     border-radius: 8px;
+    transition: transform 0.3s ease;
   }
   
   .product-title-price {
@@ -157,5 +172,10 @@
   .show-more:hover {
     background-color: #f2f2f2;
   }
+
+  .product-image:hover {
+  transform: scale(1.05);
+}
+
   </style>
   

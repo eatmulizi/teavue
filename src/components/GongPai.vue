@@ -29,12 +29,31 @@
         <img :src="require('@/assets/songli.png')" alt="Image 5" class="gallery-image">
         <img :src="require('@/assets/pingpaizixun.png')" alt="Image 6" class="gallery-image">
     </div>
+    <div>
+      <!-- 用插件 -->
+    <lunbo :images="imageList" />   
+  </div>
     </div>
   </template>
   
   <script>
+  import lunbo from './lunbo3.vue';
   export default {
-    name: 'ImageCarousel'
+    components: {
+    lunbo
+  },
+  data() {
+    return {
+      imageList: [// 这里放图片
+      require('@/assets/gongpai1.png'),
+        require('@/assets/gongpai2.png'),
+        require('@/assets/gongpai3.png'),
+        require('@/assets/gongpai4.png'),
+        require('@/assets/产品1.png')
+      ]
+    };
+  },
+   
   }
   </script>
   

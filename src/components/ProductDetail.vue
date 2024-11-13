@@ -1,7 +1,7 @@
 <template>
   <!-- @wheel.prevent="onScroll"  要滚轮特效就在 vif 后面加上这个 -->
   
-  <div v-if="product">
+  <div v-if="product" >
     <div class="product-container"  >
       <div class="product-wrapper">
         <!-- 左侧产品图片 -->
@@ -12,7 +12,7 @@
         </div>
   
         <!-- 右侧产品信息 -->
-        <div class="product-info" :style="{ transform: 'translateY(' + contentOffset + 'px)' }">
+        <div class="product-info" :style="{transform: 'translateY(' + contentOffset + 'px)' }">
           <h1 class="product-title">狮峰龙井系列 · 精品</h1>
           <div class="product-specs-price">
             <p class="product-specs">规格: 礼盒 50g 5g*10</p>
@@ -95,6 +95,7 @@
   
   <script>
   import axios from 'axios';
+  import throttle from 'lodash/throttle';
   export default {
     props:['name'],
     
@@ -106,23 +107,31 @@
       products : [],
       product: {}, // 用于存储产品数据
       imageOffset: 0, // 新增: 用于控制左侧图片的滚动位置
-      infoOffset: 0, // 新增: 用于控制右侧文字的滚动位置
+      infoContent: 0, // 新增: 用于控制右侧文字的滚动位置
       wholePageScroll: false,
       images: ["产品1.png", "产品2.png", "产品3.png"], 
+      ticking: false,
+      scrolling: false,
+      contentOffset:0,
+      rightScrolling: false,
     };
   },
   mounted() {
     // 在组件初始化时调用 API
     this.imageOffset = 0;
-    this.infoOffset = 0;
+    this.contentOffset = 0;
     this.name = this.$route.params.name;
     console.log(this.name);
    
      this.fetchProductData(this.name);
 
     console.log(this.product);
-    window.addEventListener("scroll", this.onScroll);
+    window.addEventListener('scroll', this.onScroll);
     
+  },
+  beforeDestroy() {
+
+    window.removeEventListener('scroll', this.onScroll);
   },
   methods: {
     async fetchProductData(name) {
@@ -173,24 +182,35 @@
     //     this.scrolling = false;
     //   }, 20); // 200毫秒后允许再次滚动
     // }
-    // 滚轮版本2
     onScroll() {
-      const scrollY = window.scrollY;
-      if (scrollY >= 2000) {
-       
-        this.wholePageScroll = true;
-        this.imageOffset = scrollY;
-        this.contentOffset = scrollY;
-      } else {
-        
-        this.wholePageScroll = false;
-         this.imageOffset = scrollY *0.1;  // 左侧滚动更慢
-         this.contentOffset = scrollY;
+      const scrollY = window.scrollY; // 获取页面的滚动位置
+
+      // 先更新右侧文字的滚动（右侧文字滚动的偏移）
+      if (!this.rightScrolling) {
+        this.contentOffset = scrollY *1; // 右侧文字的滚动比例
       }
-    }
-  ,
-  
-  }
+
+      // 通过请求动画帧来同步滚动效果，确保右侧文字先滚动
+      if (!this.ticking) {
+        window.requestAnimationFrame(() => {
+          // 右侧文字滚动完成后，开始更新左侧图片滚动
+          if (this.rightScrolling) {
+            this.imageOffset = scrollY * -1;  // 左侧图片的滚动
+          }
+          this.ticking = false;
+        });
+        this.ticking = true;
+      }
+
+      // 判断右侧文字滚动是否完成
+     
+        this.rightScrolling = true; // 标记右侧文字滚动完成
+      
+    },
+  },
+ 
+
+
 
   };
   </script>
@@ -213,7 +233,7 @@
     overflow: hidden;
     gap: 50px; /* 左右内容的间距 */
   }
-  
+   
   .product-image {
     width: 50%; /* 左侧图片占一半宽度 */
   }
@@ -422,5 +442,12 @@ background-color: #f2f2f2;
   height: 400px;
   object-fit: cover;
 }
+/* 可能没啥用 */
+.product-info {
+  transition: transform 0.01s ease; /* 平滑过渡 */
+}
+
+
+
   </style>
   
