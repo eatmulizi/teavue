@@ -24,8 +24,8 @@
       <div class="footer-section">
         <h2>立即购买</h2>
         <ul class="buy-links">
-          <!-- <li><img src="@/assets/jd.png" alt="JD"></li>
-          <li><img src="@/assets/tmall.png" alt="Tmall"></li> -->
+          <img class="buy-jd" src="@/assets/image/public/jingdong.png" alt="JD">
+          <img src="@/assets/image/public/tianmao.png" alt="Tmall">
         </ul>
       </div>
       <div class="footer-logo">
@@ -194,7 +194,6 @@ p {
 }
 
 .buy-links img {
-  max-width: 80px;
   cursor: pointer;
 }
 
@@ -210,5 +209,10 @@ p {
   float: left;
   display: block; /* 确保是块级元素 */
   width: 100%; /* 占据整个宽度 */
+}
+.buy-jd{
+  width: 50%;
+  float: left;
+  margin-left: -20%;
 }
 </style>

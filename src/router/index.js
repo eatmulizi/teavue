@@ -8,7 +8,7 @@ import TeaMap from '@/components/TeaMap.vue';
 import QiJia from '@/components/QiJia.vue';
 import NationalGift from '@/components/NationalGift.vue';
 import ChinagongBrand from '@/components/ChinagongBrand.vue';
-
+import MediaPage from '@/components/MediaPage.vue';
 Vue.use(Router);
 const routes = [
   { path: '/', redirect: '/home' },
@@ -40,9 +40,9 @@ const routes = [
     }
   },
   {
-    path: '/media',
-    name: 'media',
-    // component: PageContent,
+    path: '/MediaPage',
+    name: 'MediaPage',
+    component: MediaPage,
     props: { 
      
       
