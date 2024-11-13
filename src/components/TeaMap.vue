@@ -3,7 +3,7 @@
     <div class="pad-content">
       <img
         :src="
-          require('@/assets/image/longjinggongsource/longjinggongsource-pad.png')
+          require('@/assets/image/longjinggongsource/龙井贡源大图.png')
         "
         class="d-block w-100"
         alt="Image 1"
@@ -36,6 +36,7 @@
           <div class="image-content-1-left">
             <img
               src="@/assets/image/longjinggongsource/content-1-2.png"
+              class="d-block w-100"
               alt="示例图"
             />
           </div>
@@ -95,7 +96,8 @@
           </div>
           <div class="image-content-2-right">
             <img
-              src="@/assets/image/longjinggongsource/content-1-3.png"
+              src="@/assets/image/longjinggongsource/龙井贡源_地理优势.png"
+              class="d-block w-100"
               alt="示例图"
             />
           </div>
@@ -122,7 +124,8 @@
           </div>
           <div class="img-2-left">
             <img
-              src="@/assets/image/longjinggongsource/content-2-1.png"
+              src="@/assets/image/longjinggongsource/群体种.png"
+              class="d-block w-100"
               alt="示例图"
             />
           </div>
@@ -143,7 +146,8 @@
           </div>
           <div class="img-2-right">
             <img
-              src="@/assets/image/longjinggongsource/content-2-1.png"
+              src="@/assets/image/longjinggongsource/龙井43.png"
+              class="d-block w-100"
               alt="示例图"
             />
           </div>
@@ -176,22 +180,32 @@ img {
   height: auto; /* 自动调整高度以保持宽高比 */
 }
 h1 {
-  text-align: left;
   font-family: "Heavy", sans-serif;
   font-weight: 900; /* 使用 Heavy 字体 */
-  font-size: 25px;
+  font-size: 30px;
+  text-align: left;
+  letter-spacing: 0.09em;
 }
 h2 {
-  text-align: left;
   font-family: "Bold", sans-serif;
   font-weight: 700; /* 使用 Bold 字体 */
-  font-size: 25px;
+  font-size: 21px;
+  text-align: left;
+  letter-spacing: 0.09em;
+  line-height: 1.8;
+}
+h3 {
+  font-family: "Medium", sans-serif;
+  font-weight: 600; /* 使用 Medium 字体 */
+  font-size: 21px;
+  color: #214815;
 }
 p {
-  text-align: left;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.09em;
   line-height: 1.8;
-  font-family: 'Light';
+  font-family: "Light";
+  text-align: left;
+  font-size: 21px;
 }
 .page-content {
   display: flex;
@@ -289,14 +303,14 @@ img {
   height: 450px;
 }
 .image-content-2-right {
-  margin-top: 10%;
+  margin-top: 18%;
 }
 .content-2 {
   display: flex;
   flex-direction: column; /* 垂直排列子元素 */
   width: 100%; /* 占满父容器宽度 */
   padding-left: 6%;
-  padding-left: 6%;
+  padding-right: 6%;
 }
 .text-content-2-top {
   width: 100%;
@@ -342,6 +356,7 @@ img {
   margin-left:5%;
   margin-right:5%;
   margin-top:5%;
+  margin-bottom:11%;
 }
 .p-img-content-2-right{
   margin-left:5%;
@@ -351,7 +366,7 @@ img {
 .img-2-left{
   margin-left:5%;
   margin-right:5%;
-  margin-top:6.8%;
+  margin-bottom:5%;
 }
 .img-2-right{
   margin-left:5%;

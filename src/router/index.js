@@ -6,8 +6,8 @@ import ProductDetail from '@/components/ProductDetail.vue';
 import ProductAll from '@/components/ProductAll.vue';
 import TeaMap from '@/components/TeaMap.vue';
 import QiJia from '@/components/QiJia.vue';
-import nationalgift from '@/components/nationalgift.vue';
-import chinagongbrand from '@/components/chinagongbrand.vue';
+import NationalGift from '@/components/NationalGift.vue';
+import ChinagongBrand from '@/components/ChinagongBrand.vue';
 
 Vue.use(Router);
 const routes = [
@@ -18,7 +18,6 @@ const routes = [
     component: Gongpai,
     props: { images: [] }
   },
- 
   
   {
     path: '/product',
@@ -30,6 +29,7 @@ const routes = [
       
     }
   },
+
   {
     path: '/join',
     name: 'join',
@@ -76,18 +76,18 @@ const routes = [
     }
   },
   {
-    path: '/chinagongbrand',
-    name: 'chinagongbrand',
-     component: chinagongbrand,
+    path: '/ChinagongBrand',
+    name: 'ChinagongBrand',
+     component: ChinagongBrand,
     props: { 
      
       
     }
   },
   {
-    path: '/nationalgift',
-    name: 'nationalgift',
-     component: nationalgift,
+    path: '/NationalGift',
+    name: 'NationalGift',
+     component: NationalGift,
     props: { 
      
       

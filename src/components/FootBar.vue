@@ -11,7 +11,14 @@
       >
         <h2>{{ section.title }}</h2>
         <ul>
-          <li v-for="item in section.items" :key="item">{{ item }}</li>
+          <li
+            v-for="item in section.items"
+            :key="typeof item === 'string' ? item : item.alt"
+          >
+            <span v-if="typeof item === 'string'">{{ item }}</span>
+            <img v-else :src="item.image" :alt="item.alt" />
+            <!-- 渲染图像 -->
+          </li>
         </ul>
       </div>
       <div class="footer-section">
@@ -31,6 +38,9 @@
     </div>
     <div class="footer-bottom-logo">
       <img :src="footlogo" alt="Longjing Tea Logo" />
+    </div>
+    <div class="beian">
+      <p>贡牌西湖龙井茶官方网站 © ️版权所有 浙ICP备20003001号-1</p>
     </div>
   </div>
 </template>
@@ -58,7 +68,18 @@ export default {
         },
         {
           title: "联系我们",
-          items: ["商务合作", "加入我们"],
+          items: [
+            "商务合作",
+            "加入我们",
+            {
+              image: require("@/assets/image/public/wechat.png"),
+              alt: "微信二维码",
+            },
+            {
+              image: require("@/assets/image/public/douyin.png"),
+              alt: "抖音二维码",
+            }, // 添加图片对象
+          ],
         },
       ],
       companyLogo: require("@/assets/image/public/logo-bottom.png"),
@@ -109,10 +130,10 @@ p {
 }
 
 .footer-content {
-  margin-left:-2%;
+  margin-left: -2%;
   display: flex;
   justify-content: space-between; /* 水平分布 */
-  padding-top:5%;
+  padding-top: 5%;
   padding-bottom: 5%;
   width: 70%;
 }
@@ -183,5 +204,11 @@ p {
 .footer-bottom-logo {
   margin-top: 2%;
   float: left;
+}
+.beian {
+  margin-top: 2%;
+  float: left;
+  display: block; /* 确保是块级元素 */
+  width: 100%; /* 占据整个宽度 */
 }
 </style>

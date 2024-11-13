@@ -2,7 +2,7 @@
   <div class="page-content">
     <div class="pad-content">
       <img
-        :src="require('@/assets/image/qifamily/qifamily-pad.png')"
+        :src="require('@/assets/image/qifamily/戚家传承大图.png')"
         class="d-block w-100"
         alt="Image 1"
       />
@@ -35,7 +35,7 @@
       </div>
       <div class="img-content-1">
         <img
-          :src="require('@/assets/image/qifamily/content-1-1.png')"
+          :src="require('@/assets/image/qifamily/戚家传承.png')"
           class="d-block w-100"
           alt="Image 1"
         />
@@ -47,7 +47,7 @@
       </div>
       <div class="content-2-2">
         <img
-          :src="require('@/assets/image/qifamily/content-2-1.png')"
+          :src="require('@/assets/image/qifamily/戚家传承上.png')"
           class="d-block w-100"
           alt="Image 1"
         />
@@ -70,7 +70,8 @@
             </div>
             <div class="image-content-2-3-left">
               <img
-                src="@/assets/image/qifamily/content-2-2left.png"
+                src="@/assets/image/qifamily/戚家传承左边图.png"
+                class="d-block w-100"
                 alt="示例图"
               />
             </div>
@@ -80,7 +81,8 @@
           <div>
             <div class="image-content-2-3-right">
               <img
-                src="@/assets/image/qifamily/content-2-2right.png"
+                src="@/assets/image/qifamily/戚家传承有变图.png"
+                class="d-block w-100"
                 alt="示例图"
               />
             </div>
@@ -98,7 +100,7 @@
       </div>
       <div class="content-2-4">
         <img
-          :src="require('@/assets/image/qifamily/content-3-1.png')"
+          :src="require('@/assets/image/qifamily/戚家传承下.png')"
           class="d-block w-100"
           alt="Image 1"
         />
@@ -121,7 +123,7 @@
         </div>
         <div class="img-content-2-5">
           <img
-            :src="require('@/assets/image/qifamily/content-3-2.png')"
+            :src="require('@/assets/image/qifamily/文化遗产技艺非凡.png')"
             class="d-block w-100"
             alt="Image 1"
           />
@@ -239,22 +241,32 @@ img {
   height: auto; /* 自动调整高度以保持宽高比 */
 }
 h1 {
-  text-align: left;
-  font-family: 'Heavy', sans-serif;
+  font-family: "Heavy", sans-serif;
   font-weight: 900; /* 使用 Heavy 字体 */
-  font-size: 25px;
+  font-size: 30px;
+  text-align: left;
+  letter-spacing: 0.09em;
 }
 h2 {
-  text-align: left;
-  font-family: 'Bold', sans-serif;
+  font-family: "Bold", sans-serif;
   font-weight: 700; /* 使用 Bold 字体 */
-  font-size: 25px;
+  font-size: 21px;
+  text-align: left;
+  letter-spacing: 0.09em;
+  line-height: 1.8;
+}
+h3 {
+  font-family: "Medium", sans-serif;
+  font-weight: 600; /* 使用 Medium 字体 */
+  font-size: 21px;
+  color: #214815;
 }
 p {
-  text-align: left;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.09em;
   line-height: 1.8;
-  font-family: 'Light';
+  font-family: "Light";
+  text-align: left;
+  font-size: 21px;
 }
 .image-container {
   display: flex;

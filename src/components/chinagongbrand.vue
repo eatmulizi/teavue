@@ -1,8 +1,9 @@
 <template>
+ 
   <div class="page-content">
     <div class="pad-content">
       <img
-        :src="require('@/assets/image/chinagongbrand/chinagongbrand-pad.png')"
+        :src="require('@/assets/image/chinagongbrand/中国贡牌大图.png')"
         class="d-block w-100"
         alt="Image 1"
       />
@@ -39,7 +40,7 @@
       </div>
       <div class="img-content-1">
         <img
-          :src="require('@/assets/image/chinagongbrand/content-1.png')"
+          :src="require('@/assets/image/chinagongbrand/西湖龙井_中国贡牌.png')"
           class="d-block w-100"
           alt="Image 1"
         />
@@ -65,7 +66,8 @@
           </div>
           <div class="image-content-2-left">
             <img
-              src="@/assets/image/chinagongbrand/content-2-1.png"
+              src="@/assets/image/chinagongbrand/中国贡牌_源头管控.png"
+              class="d-block w-100"
               alt="示例图"
             />
           </div>
@@ -75,7 +77,8 @@
         <div>
           <div class="image-content-2-right">
             <img
-              src="@/assets/image/chinagongbrand/content-2-2.png"
+              src="@/assets/image/chinagongbrand/中国贡牌_品质龙井链强质优.png"
+              class="d-block w-100"
               alt="示例图"
             />
           </div>
@@ -103,7 +106,7 @@
         <h1>发展历程</h1>
       </div>
       <div class="img-content-3">
-        <div class="image-content-3-1">
+        <!--         <div class="image-content-3-1">
           <img
             src="@/assets/image/chinagongbrand/content-3-1.png"
             alt="示例图"
@@ -120,7 +123,9 @@
             src="@/assets/image/chinagongbrand/content-3-1.png"
             alt="示例图"
           />
-        </div>
+        </div> -->
+        <!-- 用插件 -->
+        <lunboHistory :images="imageList" />
       </div>
     </div>
     <div class="content-4">
@@ -129,20 +134,23 @@
           <h1>品牌荣誉</h1>
         </div>
         <div class="p-text-content-4">
-          <p>2003 年被评为浙江省著名商标<br>
-2005 年获国际茶业博览会金奖<br>
-2005 年率先通过 QS 质量安全体系认证<br>
-2006 年“贡牌”西湖龙井茶获得农业部首届“中国名牌农产品”称号，
-成了西湖龙井中唯一的中国名牌农产品<br>
-2007 年被浙江省农业博览会评为“十大市民最喜爱品牌农产品”<br>
-2008 年获得农业部无公害农产品认证<br>
-2008 年“贡牌”西湖龙井茶制作技艺被认定为全国非物质文化遗产<br>
-2009 年公司多年承办的国家礼品茶被浙江省农业厅授予“特别荣誉名茶”<br>
-2010 年被评为“十大旅游茗茶”<br>
-2010 年作为浙江绿茶代表入驻上海世博会，并被指定为世博会联合国馆专用茶，
-同年还被全国供销合作总社评为“新中国 60 年茶事功勋企业”<br>
-2011 年成为首批国际地理标志网络组织 (oriGIn) 国际会员<br>
-2013 年被评为“消费者最满意十大茶叶品牌”</p>
+          <p>
+            2003 年被评为浙江省著名商标<br />
+            2005 年获国际茶业博览会金奖<br />
+            2005 年率先通过 QS 质量安全体系认证<br />
+            2006 年“贡牌”西湖龙井茶获得农业部首届“中国名牌农产品”称号，
+            成了西湖龙井中唯一的中国名牌农产品<br />
+            2007 年被浙江省农业博览会评为“十大市民最喜爱品牌农产品”<br />
+            2008 年获得农业部无公害农产品认证<br />
+            2008 年“贡牌”西湖龙井茶制作技艺被认定为全国非物质文化遗产<br />
+            2009 年公司多年承办的国家礼品茶被浙江省农业厅授予“特别荣誉名茶”<br />
+            2010 年被评为“十大旅游茗茶”<br />
+            2010
+            年作为浙江绿茶代表入驻上海世博会，并被指定为世博会联合国馆专用茶，
+            同年还被全国供销合作总社评为“新中国 60 年茶事功勋企业”<br />
+            2011 年成为首批国际地理标志网络组织 (oriGIn) 国际会员<br />
+            2013 年被评为“消费者最满意十大茶叶品牌”
+          </p>
         </div>
       </div>
       <div class="img-content-4">
@@ -157,11 +165,22 @@
 </template>
 
 <script>
+import LunboHistory from "./LunboHistory.vue";
 export default {
-  name: "MyComponent",
+  components: {
+    LunboHistory,
+  },
   data() {
     return {
       // 在这里定义你的数据
+      imageList: [
+        // 这里放图片
+        require("@/assets/image/chinagongbrand/content-3-1.png"),
+        require("@/assets/image/chinagongbrand/content-2-1.png"),
+        require("@/assets/image/chinagongbrand/content-3-1.png"),
+        require("@/assets/image/chinagongbrand/content-2-1.png"),
+        require("@/assets/image/chinagongbrand/content-3-1.png"),
+      ],
     };
   },
   methods: {
@@ -342,7 +361,7 @@ img {
   margin-right: 2%;
   height: auto;
 }
-.title-text-content-4{
+.title-text-content-4 {
   margin-top: 5%;
   margin-bottom: 5%;
 }
@@ -353,6 +372,6 @@ img {
   margin-left: 2%;
   margin-right: 6%;
   height: auto;
-  margin-top:3%;
+  margin-top: 3%;
 }
 </style>

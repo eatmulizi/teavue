@@ -27,69 +27,24 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a href="#" @click.prevent="toggleDropdown" class="nav-link">
-              贡牌西湖龙井
-            </a>
-            <div class="dropdown-content" :class="{ show: showDropdown }">
-              <div class="dropdown-items">
-                <router-link
-                  to="/chinagongbrand"
-                  @click.native="hideDropdown"
-                  class="dropdown-item"
-                >
-                  <img :src="require('@/assets/image/public/chinatea-null.png')" alt="Image 1" />
-                  <h3 class="navh3">中国贡牌</h3>
-                  <p>匠心铸茶 经典传承</p>
-                </router-link>
-                <router-link
-                  to="/maps"
-                  @click.native="hideDropdown"
-                  class="dropdown-item"
-                >
-                  <img :src="require('@/assets/image/public/chinatea-null.png')" alt="Image 2" />
-                  <h3 class="navh3">龙井贡源</h3>
-                  <p>西湖之域 龙井正宗</p>
-                </router-link>
-                <router-link
-                  to="/QiJia"
-                  @click.native="hideDropdown"
-                  class="dropdown-item"
-                >
-                  <img :src="require('@/assets/image/public/chinatea-null.png')" alt="Image 3" />
-                  <h3 class="navh3">戚家传承</h3>
-                  <p>百年传承 非遗技艺</p>
-                </router-link>
-                <router-link
-                  to="/nationalgift"
-                  @click.native="hideDropdown"
-                  class="dropdown-item"
-                >
-                  <img :src="require('@/assets/image/public/chinatea-null.png')" alt="Image 4" />
-                  <h3 class="navh3">国礼贡牌</h3>
-                  <p>国礼尊荣  盛誉八方</p>
-                </router-link>
-              </div>
-            </div>
+            <DropdownMenu title="贡牌西湖龙井" :dropdownData="GongPaidropdownData"/>
           </li>
-          <li>
-            <router-link to="/product" class="nav-link" @click="hideDropdown"
-              >产品中心</router-link
-            >
+          <li class="nav-item">
+            <DropdownMenu title="产品中心" :dropdownData="ProductdropdownData"/>
           </li>
           <li>
             <router-link to="/join" class="nav-link" @click="hideDropdown"
               >招商加盟</router-link
             >
           </li>
-          <li>
-            <router-link to="/media" class="nav-link" @click="hideDropdown"
-              >媒体聚焦</router-link
-            >
+          <li class="nav-item">
+            <DropdownMenu title="媒体聚焦" :dropdownData="MediadropdownData"/>
           </li>
           <li>
-            <router-link to="/museum" class="nav-link" @click="hideDropdown"
-              >杭州西湖龙井博物馆</router-link
-            >
+            <img
+            :src="require('@/assets/image/public/shoppingcart-ico.png')"
+            alt="Brand"
+          />
           </li>
         </ul>
       </div>
@@ -98,7 +53,12 @@
 </template>
 
 <script>
+import DropdownMenu from './DropdownMenu.vue'; // 引入下拉框组件
+
 export default {
+  components: {
+    DropdownMenu
+  },
   data() {
     return {
       navbarStyle: {
@@ -107,46 +67,32 @@ export default {
         top: "0",
         width: "100%",
         zIndex: "999",
-        height:"100px"
+        height: "100px"
       },
-      showDropdown: false, // 控制下拉显示状态
-      dropdownData: [] // 用于存储下拉数据
+      GongPaidropdownData: [
+        { name: '中国贡牌', link: '/chinagongbrand', image: require('@/assets/image/public/菜单栏1.png'), description: '匠心铸茶 经典传承' },
+        { name: '龙井贡源', link: '/maps', image: require('@/assets/image/public/菜单栏2.png'), description: '西湖之域 龙井正宗' },
+        { name: '戚家传承', link: '/QiJia', image: require('@/assets/image/public/菜单栏3.png'), description: '百年传承 非遗技艺' },
+        { name: '国礼贡牌', link: '/nationalgift', image: require('@/assets/image/public/菜单栏4.png'), description: '国礼尊荣 盛誉八方' }
+      ],
+      ProductdropdownData: [
+        { name: '狮峰龙井系列', link: '/', image: require('@/assets/image/public/菜单1.png'), description: '狮峰茶韵 至臻之选' },
+        { name: '西湖龙井系列', link: '/', image: require('@/assets/image/public/菜单2.png'), description: '西湖之域 龙井正宗' },
+        { name: '龙井茶系列', link: '/', image: require('@/assets/image/public/菜单3.png'), description: '龙井好茶 经典之味' },
+        { name: '其他茗茶', link: '/', image: require('@/assets/image/public/菜单4.png'), description: '茶韵多元 特色之魅' }
+      ],
+      MediadropdownData: [
+        { name: '', link: '', image: require('@/assets/image/public/null.png'), description: '' },
+        { name: '新闻发布', link: '', image: require('@/assets/image/public/新闻菜单1.png'), description: '品牌动态 媒体聚焦' },
+        { name: '社交媒体', link: '', image: require('@/assets/image/public/新闻菜单2.png'), description: '联系我们' },
+        { name: '', link: '', image: require('@/assets/image/public/null.png'), description: '' }
+      ],
     };
   },
   methods: {
-    customFunction() {
-      // 自定义函数逻辑
-    },
-    toggleDropdown() {
-      this.showDropdown = !this.showDropdown; // 切换显示状态
-    },
     hideDropdown() {
-      this.showDropdown = false; // 隐藏下拉框
-    },
-    handleClickOutside(event) {
-      const dropdown = this.$el.querySelector('.dropdown-content');
-      const toggleButton = this.$el.querySelector('.nav-link'); // 获取下拉按钮
-      if (this.showDropdown && !dropdown.contains(event.target) && !toggleButton.contains(event.target)) {
-        this.hideDropdown(); // 点击外部区域收起下拉框
-      }
-    },
-    loadDropdownData() {
-      // 这里可以进行异步请求数据
-      // 例如，使用 fetch 或 axios 请求数据
-      this.dropdownData = [
-        { name: '内容 1', link: '/chinagongbrand' },
-        { name: '内容 2', link: '/maps' },
-        { name: '内容 3', link: '/QiJia' },
-        { name: '内容 4', link: '/nationalgift' }
-      ];
+      // 处理隐藏逻辑
     }
-  },
-  mounted() {
-    document.addEventListener('click', this.handleClickOutside); // 监听点击事件
-    this.loadDropdownData(); // 组件加载时预加载数据
-  },
-  beforeDestroy() {
-    document.removeEventListener('click', this.handleClickOutside); // 清理监听
   }
 };
 </script>
@@ -162,16 +108,16 @@ h2 {
   font-weight: 700; /* 使用 Bold 字体 */
   font-size: 25px;
 }
-h3{
+h3 {
   font-family: "Medium", sans-serif;
   font-weight: 600; /* 使用 Medium 字体 */
   font-size: 20px;
-  color:#214815;
+  color: #214815;
 }
 p {
   letter-spacing: 0.08em;
   line-height: 1.8;
-  font-family: 'Light';
+  font-family: "Light";
 }
 .navbar-brand {
   font-size: 30px;
@@ -181,25 +127,25 @@ p {
   pointer-events: none;
   height: 50px;
 }
-.navh3{
-  margin-top:3%;
+.navh3 {
+  margin-top: 3%;
 }
-#logo_group{
+#logo_group {
   padding-top: 1%;
   padding-bottom: 1%;
   padding-left: 1%;
 }
 
 /* 链接样式 */
-.nav-link {
-  color: #ffd700 !important; /* 链接颜色 */
+.nav-link { 
+  color: #fffaf0 !important; /* 链接颜色 */
   font-size: 18px;
   margin-right: 30px; /* 链接间距 */
   text-decoration: none !important;
   transition: color 0.3s;
 }
 .nav-link:hover {
-  color: #fffaf0 !important; /* 悬停时颜色 */
+  color:#ffd700 !important; /* 悬停时颜色 */
 }
 
 /* 下拉内容样式 */
@@ -249,8 +195,8 @@ p {
   margin: 5px 0; /* 上下间距 */
 }
 img {
-    max-width: 100%; /* 图像宽度最大为 100% */
-    height: auto; /* 自动调整高度以保持宽高比 */
+  max-width: 100%; /* 图像宽度最大为 100% */
+  height: auto; /* 自动调整高度以保持宽高比 */
 }
 body {
   padding-top: 100px; /* 预留给固定导航栏的空间，避免遮挡内容 */

@@ -56,7 +56,7 @@
         </div>
         <div class="image">
           <img
-            :src="require('@/assets/image/homepage/content-1.png')"
+            :src="require('@/assets/image/homepage/首页_中国贡牌图.png')"
             alt="Image 4"
             class="gallery-image"
           />
@@ -73,7 +73,7 @@
         </div>
         <div class="image">
           <img
-            :src="require('@/assets/image/homepage/content-2.png')"
+            :src="require('@/assets/image/homepage/首页_送礼送国礼小图.png')"
             alt="Image 4"
             class="gallery-image"
           />
@@ -152,22 +152,30 @@ export default {
 h1 {
   font-family: "Heavy", sans-serif;
   font-weight: 900; /* 使用 Heavy 字体 */
-  font-size: 25px;
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: 0.09em;
 }
 h2 {
   font-family: "Bold", sans-serif;
   font-weight: 700; /* 使用 Bold 字体 */
-  font-size: 25px;
+  font-size: 21px;
+  text-align: left;
+  letter-spacing: 0.09em;
+  line-height: 1.8;
 }
 h3 {
   font-family: "Medium", sans-serif;
   font-weight: 600; /* 使用 Medium 字体 */
-  font-size: 18px;
+  font-size: 21px;
+  color: #214815;
 }
 p {
-  letter-spacing: 0.08em;
+  letter-spacing: 0.09em;
   line-height: 1.8;
-  font-size: 15px;
+  font-family: "Light";
+  text-align: left;
+  font-size: 21px;
 }
 .page-content {
   text-align: center;
