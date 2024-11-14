@@ -1,3 +1,67 @@
+<!-- <template>
+  <div class="image-container" @wheel="onScroll">
+    <img
+      v-for="(image, index) in images"
+      :key="index"
+      :src="image"
+      alt="Image"
+      class="full-screen-image"
+      :class="{ 'fade-in': index <= currentVisibleIndex }"  
+    />
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      count:0,
+      images: [
+        require('@/assets/qijia1.png'),
+        require('@/assets/qijia2.png'),
+        require('@/assets/qijia3.png'),
+        require('@/assets/qijia4.png'),
+      ],
+      currentVisibleIndex: 0, // 当前可见的图片索引
+      hasScrolled: false // 标记是否已滚动过
+    };
+  },
+  methods: {
+    onScroll(event) {
+      // 检查滚动方向
+      const delta = event.deltaY;
+      
+      this.count += delta;
+      // 向下滚动，显示下一张图片
+      if (this.count > 500 && this.currentVisibleIndex < this.images.length - 1) {
+        this.count = 0
+        this.currentVisibleIndex++; // 增加可见图片索引
+      }
+    }
+  }
+};
+</script>
+
+<style scoped>
+.image-container {
+  display: flex;
+  flex-direction: column; /* 使图片竖向排列 */
+  height: 90vh; /* 让容器占满屏幕高度 */
+}
+
+.full-screen-image {
+  flex: 1; /* 每张图片均分屏幕宽度 */
+  object-fit: cover; /* 确保图片以适合方式填充 */
+  height: 100%; /* 图片高度撑满视口高度 */
+  width: 100%; /* 图片宽度撑满父容器的宽度 */
+  opacity: 0; /* 初始透明度为0 */
+  transition: opacity 1s ease; /* 渐变效果 */
+}
+
+.fade-in {
+  opacity: 1; /* 渐变出现时的透明度 */
+}
+</style> -->
 <template>
   <div class="page-content">
     <div class="pad-content">
@@ -37,7 +101,7 @@
       <div class="img-content-1">
         <img
           :src="require('@/assets/image/qifamily/戚家传承.png')"
-          class="d-block w-100"
+          class="d-block w-100 fade-in-element"
           alt="Image 1"
         />
       </div>
@@ -49,7 +113,7 @@
       <div class="content-2-2">
         <img
           :src="require('@/assets/image/qifamily/戚家传承上.png')"
-          class="d-block w-100"
+          class="d-block w-100 fade-in-element"
           alt="Image 1"
         />
       </div>
@@ -72,7 +136,7 @@
             <div class="image-content-2-3-left">
               <img
                 src="@/assets/image/qifamily/戚家传承左边图.png"
-                class="d-block w-100"
+                class="d-block w-100 fade-in-element"
                 alt="示例图"
               />
             </div>
@@ -83,7 +147,7 @@
             <div class="image-content-2-3-right">
               <img
                 src="@/assets/image/qifamily/戚家传承有变图.png"
-                class="d-block w-100"
+                class="d-block w-100 fade-in-element"
                 alt="示例图"
               />
             </div>
@@ -102,7 +166,7 @@
       <div class="content-2-4">
         <img
           :src="require('@/assets/image/qifamily/戚家传承下.png')"
-          class="d-block w-100"
+          class="d-block w-100 fade-in-element"
           alt="Image 1"
         />
       </div>
@@ -126,15 +190,15 @@
             </p>
           </div>
         </div>
-        <div class="img-content-2-5">
+        <div class="img-content-2-5 ">
           <img
             :src="require('@/assets/image/qifamily/文化遗产技艺非凡.png')"
-            class="d-block w-100"
+            class="d-block w-100 fade-in-element"
             alt="Image 1"
           />
         </div>
       </div>
-<!--       <div class="content-2-6">
+
         <div class="text-content-2-6">
           <h1>十大工艺</h1>
         </div>
@@ -142,7 +206,7 @@
           <div class="img-ten">
             <img
               :src="require('@/assets/image/qifamily/content-4-1.png')"
-              class="d-block w-100"
+              class="d-block w-100 "
               alt="Image 1"
             />
           </div>
@@ -175,70 +239,104 @@
             />
           </div>
         </div>
-      </div> -->
-      <div class="content-2-7">
+      </div> 
+      
         <!-- 这里请用首页式的轮播特效，共5张图 -->
         <div class="text-content-2-7">
           <h1>十大技法</h1>
         </div>
-        <div class="img-content-2-7">
-          <div class="img-content-2-6">
-            <div class="img-ten">
-              <img
-                :src="require('@/assets/image/qifamily/content-4-1.png')"
-                class="d-block w-100"
-                alt="Image 1"
-              />
-            </div>
-            <div class="img-ten">
-              <img
-                :src="require('@/assets/image/qifamily/content-4-1.png')"
-                class="d-block w-100"
-                alt="Image 1"
-              />
-            </div>
-            <div class="img-ten">
-              <img
-                :src="require('@/assets/image/qifamily/content-4-1.png')"
-                class="d-block w-100"
-                alt="Image 1"
-              />
-            </div>
-            <div class="img-ten">
-              <img
-                :src="require('@/assets/image/qifamily/content-4-1.png')"
-                class="d-block w-100"
-                alt="Image 1"
-              />
-            </div>
-            <div class="img-ten">
-              <img
-                :src="require('@/assets/image/qifamily/content-4-1.png')"
-                class="d-block w-100"
-                alt="Image 1"
-              />
-            </div>
+
+
+
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img  :src= "require ('@/assets/image/qifamily/十大技法轮播1.png') " class="d-block w-100" alt="Carousel Image 1">
           </div>
+          <div class="carousel-item">
+            <img :src="require('@/assets/image/qifamily/十大技法轮播2.png')" class="d-block w-100" alt="Carousel Image 2">
+          </div>
+          <div class="carousel-item">
+            <img :src="require('@/assets/image/qifamily/十大技法轮播3.png')" class="d-block w-100" alt="Carousel Image 3">
+          </div>
+          <div class="carousel-item active">
+            <img  :src= "require ('@/assets/image/qifamily/十大技法轮播4.png') " class="d-block w-100" alt="Carousel Image 1">
+          </div>
+          <div class="carousel-item">
+            <img :src="require('@/assets/image/qifamily/十大技法轮播5.png')" class="d-block w-100" alt="Carousel Image 2">
+          </div>
+          
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
+       
+    
     </div>
-  </div>
+ 
 </template>
   
   <script>
+/*   import VueSlickCarousel from 'vue-slick-carousel'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css' */
+
 export default {
   name: "MyComponent",
+  components: { 
+ /*  VueSlickCarousel */
+},
   data() {
     return {
-      // 在这里定义你的数据
+    
+      settings: {
+      centerMode: true,
+      centerPadding: '20px',
+      focusOnSelect: true,
+      infinite: true,
+      slidesToShow: 1,
+      speed: 500,
+      autoplay: true
+    },
     };
   },
   methods: {
-    // 在这里定义你的方法
+    
   },
   mounted() {
-    // 在这里执行组件挂载后的代码
-  },
+    const elements = document.querySelectorAll('.fade-in-element');
+  if (elements.length === 0) {
+    console.log('没有找到目标元素');
+  } else {
+    console.log('找到元素:', elements);
+  }
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // 图片进入视口时，添加可见类
+            console.log('Image is in the viewport');
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // 停止观察
+          }
+        });
+      },
+      {
+        threshold: 0.5, // 图片进入视口的 50% 时触发
+      }
+    );
+
+    // 监听所有需要渐入的元素
+
+    elements.forEach(element => observer.observe(element));
+  }
+  ,
 };
 </script>
   
@@ -404,6 +502,25 @@ img {
   display: flex;
   margin-left: 2%;
   margin-right: 2%;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 监听元素是否进入视口，设置初始透明度 */
+.fade-in-element {
+  opacity: 0;
+  transition: opacity 3.5s ease-out;
+}
+
+/* 当元素进入视口时，添加 fade-in 类 */
+.fade-in-element.visible {
+  opacity: 1;
 }
 </style>
   

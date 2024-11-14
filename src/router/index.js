@@ -9,6 +9,11 @@ import QiJia from '@/components/QiJia.vue';
 import NationalGift from '@/components/NationalGift.vue';
 import ChinagongBrand from '@/components/ChinagongBrand.vue';
 import MediaPage from '@/components/MediaPage.vue';
+import NewsPublic from '@/components/NewsPublic.vue';
+import NewsDetail from '@/components/NewsDetail.vue';
+import ProductNew from '@/components/ProductNew.vue';
+import DetailNew from '@/components/DetailNew.vue';
+import ZhaoShang from '@/components/ZhaoShang.vue';
 Vue.use(Router);
 const routes = [
   { path: '/', redirect: '/home' },
@@ -92,13 +97,70 @@ const routes = [
      
       
     }
+  },
+  {
+    path: '/NewsPublic',
+    name: 'NewsPublic',
+     component: NewsPublic,
+    props: { 
+     
+      
+    }
+  },
+  {
+    path: '/NewsPublic/:id',
+    name: 'NewsDetail',
+     component: NewsDetail,
+    props: { 
+     
+      
+    }
+  },
+  {
+    path: '/ProductNew',
+    name: 'ProductNew',
+    component: ProductNew,
+    props: { 
+    
+     
+    }
+  },
+  {
+    path: '/DetailNew',
+    name: 'DetailNew',
+    component: DetailNew,
+    props: { 
+    
+     
+    }
+  },
+  {
+    path: '/ZhaoShang',
+    name: 'ZhaoShang',
+    component: ZhaoShang,
+    props: { 
+    
+     
+    }
+  },
+  {
+    path: '/MediaPage',
+    name: 'MediaPage',
+    component: MediaPage,
+    props: { 
+    
+     
+    }
   }
-
 ]
 
-const router =new Router({
+const router = new Router({
   mode: "history",
-  routes
-})
+  routes,
+  scrollBehavior() {
+    // 每次路由跳转时，返回顶部
+    return { x: 0, y: 0 };
+  }
+});
 
 export default router

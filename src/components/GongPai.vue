@@ -152,7 +152,7 @@ export default {
 h1 {
   font-family: "Heavy", sans-serif;
   font-weight: 900; /* 使用 Heavy 字体 */
-  font-size: 30px;
+  font-size: 1.875rem;
   text-align: center;
   letter-spacing: 0.09em;
 }
@@ -167,7 +167,7 @@ h2 {
 h3 {
   font-family: "Medium", sans-serif;
   font-weight: 600; /* 使用 Medium 字体 */
-  font-size: 21px;
+  font-size: 1.3125rem;
   color: #214815;
 }
 p {
@@ -175,7 +175,7 @@ p {
   line-height: 1.8;
   font-family: "Light";
   text-align: left;
-  font-size: 21px;
+  font-size: 1.3125rem;
 }
 .page-content {
   text-align: center;

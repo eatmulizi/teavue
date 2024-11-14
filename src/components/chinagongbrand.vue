@@ -46,87 +46,67 @@
         />
       </div>
     </div>
-    <div class="content-2">
+   
       <!--这里请用走马灯式轮播图，共3张，下方是写死的2个div，可以删掉，现在文字和图合并成图片了-->
-      <div class="content-2-left">
-        <div>
-          <div class="text-content-2-left">
-            <div class="title-content-2-left">
-              <h1>源头管控，科技推动</h1>
-            </div>
-            <div class="p-content-2-left">
-              <p>
-                公司在西湖龙井一级、二级核心产区内拥有
-                1320亩无公害茶园基地，创新 性推行 “公司 + 农户 +
-                基地”管理模式，从源头到成品，严格把控每个环节，确保每一片茶叶都具备上乘品质。公司自营茶园超
-                500亩，还在龙井村 狮峰山一级核心保护区率先建设
-                70亩智慧型茶园，应用 5G、区块链及
-                AI技术，成功构建基于区块链技术的数字化茶园追溯体系，确保茶园品质和生态安全。
-              </p>
-            </div>
-          </div>
-          <div class="image-content-2-left">
+    <div>
+  <VueSlickCarousel
+v-bind="settings"
+class="content123" >
+   
+<div class="carousel-item">
             <img
-              src="@/assets/image/chinagongbrand/中国贡牌_源头管控.png"
-              class="d-block w-100"
-              alt="示例图"
+              :src="require('@/assets/image/chinagongbrand/源头管控轮播1.png')"
+             
+             
             />
           </div>
-        </div>
-      </div>
-      <div class="content-2-right">
-        <div>
-          <div class="image-content-2-right">
+          <div class="carousel-item">
             <img
-              src="@/assets/image/chinagongbrand/中国贡牌_品质龙井链强质优.png"
-              class="d-block w-100"
-              alt="示例图"
+              :src="require('@/assets/image/chinagongbrand/源头管控轮播2.png')"
+              
+            
             />
           </div>
-          <div class="text-content-2-right">
-            <div class="title-content-2-right">
-              <h1>品质龙井 链强质优</h1>
-            </div>
-            <div class="p-content-2-right">
-              <p>
-                1984年，公司在西湖龙井核心产区建立首家工厂。随着公司不断发展，在原基础上迭代升级，成就了公司现拥有两家初制工厂和两家精制工厂的大型工厂生产规模。公司秉持严谨管理和卓越品质追求的理念，通过了
-                ISO9001质量管理体系和 ISO22000
-                食品安全管理体系认证，成功构建起优于国家标准的食品质量安全管控体系；在生产各环节严格把控茶叶质量关，为消费者提供放心优质的西湖龙井茶。这为传统西湖龙井茶产业注入了新活力，更是开启了现代化加工的崭新篇章。
-              </p>
-              <p>
-                2024年，公司迈出坚实步伐，全力打造西湖区叶埠桥数智化新工厂。该工厂总面积达
-                7000平方米，是集研发、生产、仓储、物流全自动化，高度智能化数字化的智慧工厂。先进技术设备高效运转，研发团队持续创新，生产流程精准规范，仓储管理科学有序，物流配送快速便捷。新工厂的建成，标志着公司在茶叶产业发展道路上再上新台阶，为西湖龙井的传承与发展注入强大动力，也将引领西湖龙井产业迈向更广阔的未来。
-              </p>
-            </div>
+          <div class="carousel-item">
+            <img
+              :src="require('@/assets/image/chinagongbrand/源头管控轮播3.png')"
+             
+             
+            />
           </div>
-        </div>
-      </div>
-    </div>
+</VueSlickCarousel>
+      
+</div>
+
     <div class="content-3">
       <div class="text-content-3">
         <h1>发展历程</h1>
       </div>
-      <div class="img-content-3">
-        <!--         <div class="image-content-3-1">
-          <img
-            src="@/assets/image/chinagongbrand/content-3-1.png"
-            alt="示例图"
-          />
-        </div>
-        <div class="image-content-3-2">
-          <img
-            src="@/assets/image/chinagongbrand/content-3-1.png"
-            alt="示例图"
-          />
-        </div>
-        <div class="image-content-3-3">
-          <img
-            src="@/assets/image/chinagongbrand/content-3-1.png"
-            alt="示例图"
-          />
-        </div> -->
+  
+  
         <!-- 这里请用首页式的轮播图，共2张 -->
-        <lunboHistory :images="imageList" />
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img  :src= "require ('@/assets/image/chinagongbrand/历史1.png') " class="d-block w-100" alt="Carousel Image 1">
+        </div>
+        <div class="carousel-item">
+          <img :src="require('@/assets/image/chinagongbrand/历史2.png')" class="d-block w-100" alt="Carousel Image 2">
+        </div>
+       
+        
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+
+   
+   
       </div>
     </div>
     <div class="content-4">
@@ -135,54 +115,69 @@
         <div class="title-text-content-4">
           <h1>品牌荣誉</h1>
         </div>
-        <!-- <div class="p-text-content-4">
-          <p>
-            2003 年被评为浙江省著名商标<br />
-            2005 年获国际茶业博览会金奖<br />
-            2005 年率先通过 QS 质量安全体系认证<br />
-            2006 年“贡牌”西湖龙井茶获得农业部首届“中国名牌农产品”称号，
-            成了西湖龙井中唯一的中国名牌农产品<br />
-            2007 年被浙江省农业博览会评为“十大市民最喜爱品牌农产品”<br />
-            2008 年获得农业部无公害农产品认证<br />
-            2008 年“贡牌”西湖龙井茶制作技艺被认定为全国非物质文化遗产<br />
-            2009 年公司多年承办的国家礼品茶被浙江省农业厅授予“特别荣誉名茶”<br />
-            2010 年被评为“十大旅游茗茶”<br />
-            2010
-            年作为浙江绿茶代表入驻上海世博会，并被指定为世博会联合国馆专用茶，
-            同年还被全国供销合作总社评为“新中国 60 年茶事功勋企业”<br />
-            2011 年成为首批国际地理标志网络组织 (oriGIn) 国际会员<br />
-            2013 年被评为“消费者最满意十大茶叶品牌”
-          </p>
-        </div> -->
+        
+        <div id="carouselExample2" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img  :src= "require ('@/assets/image/chinagongbrand/品牌荣誉轮播1.png') " class="d-block w-100" alt="Carousel Image 1">
+        </div>
+        <div class="carousel-item">
+          <img :src="require('@/assets/image/chinagongbrand/品牌荣誉轮播2.png')" class="d-block w-100" alt="Carousel Image 2">
+        </div>
+       
+        
       </div>
-      <div class="img-content-4">
-        <img
-          :src="require('@/assets/image/chinagongbrand/content-3-2.png')"
-          class="d-block w-100"
-          alt="Image 1"
-        />
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample2" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample2" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+
+   
+   
       </div>
+      </div>
+    
     </div>
+  
   </div>
 </template>
 
 <script>
-import LunboHistory from "./LunboHistory.vue";
+
+import VueSlickCarousel from 'vue-slick-carousel'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+// optional style for arrows & dots
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css' 
 export default {
   components: {
-    LunboHistory,
+
+      VueSlickCarousel
+
   },
   data() {
     return {
       // 在这里定义你的数据
       imageList: [
         // 这里放图片
-        require("@/assets/image/chinagongbrand/content-3-1.png"),
-        require("@/assets/image/chinagongbrand/content-2-1.png"),
-        require("@/assets/image/chinagongbrand/content-3-1.png"),
-        require("@/assets/image/chinagongbrand/content-2-1.png"),
-        require("@/assets/image/chinagongbrand/content-3-1.png"),
+        require("@/assets/image/chinagongbrand/源头管控轮播1.png"),
+        require("@/assets/image/chinagongbrand/源头管控轮播2.png"),
+        require("@/assets/image/chinagongbrand/源头管控轮播3.png"),
+        
       ],
+      settings: {
+
+          centerMode: true,
+    centerPadding: '20px',
+    focusOnSelect: true,
+    infinite: true,
+    slidesToShow: 2,
+    speed: 500,
+    autoplay: true
+  },
     };
   },
   methods: {
@@ -246,6 +241,7 @@ p {
   text-align: center;
   display: flex;
   flex-direction: column; /* 垂直排列 */
+  max-width: 100%;
 }
 .pad-content {
   width: 100%;
@@ -296,20 +292,7 @@ img {
   margin-top: 2%;
 }
 
-.content-2-left {
-  flex: 1; /* 等比占据 */
-  height: auto; /* 设置高度 */
-  margin-left: 6%;
-  margin-right: 2%;
-  height: auto;
-}
-.content-2-right {
-  flex: 1; /* 等比占据 */
-  height: auto; /* 设置高度 */
-  margin-left: 2%;
-  margin-right: 6%;
-  height: auto;
-}
+
 .p-content-2-left {
   margin-top: 5%;
 }
@@ -375,5 +358,46 @@ img {
   margin-right: 6%;
   height: auto;
   margin-top: 3%;
+}
+
+
+
+
+
+.content123 {
+width: 2000px;
+margin: 0 auto;
+padding: 20px;
+}
+
+/* 每个图片项的样式 */
+.carousel-item {
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 20px;
+}
+
+/* 控制图片的样式 */
+.carousel-item img {
+width: 1000px; /* 控制图片宽度 */
+height: auto; /* 保持图片的纵横比 */
+border-radius: 8px; /* 圆角效果 */
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* 给图片加阴影 */
+transition: transform 0.3s ease, opacity 0.3s ease; /* 图片的过渡效果 */
+padding: 20px;
+}
+html, body {
+max-width: 100%;
+overflow-x: hidden;  /* 防止横向滚动条 */
+}
+
+* {
+box-sizing: border-box;  /* 使得所有元素的宽度和高度计算时包含内边距和边框 */
+}
+
+img, video, iframe {
+max-width: 100%;
+height: auto;  /* 防止图片或其他媒体元素超出父容器 */
 }
 </style>

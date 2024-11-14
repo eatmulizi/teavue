@@ -35,7 +35,7 @@
           </div>
           <div class="image-content-1-left">
             <img
-              src="@/assets/image/longjinggongsource/content-1-2.png"
+              src="@/assets/image/longjinggongsource/content-1-1.png"
               class="d-block w-100"
               alt="示例图"
             />
@@ -72,7 +72,8 @@
         <div>
           <div class="image-content-1-right">
             <img
-              src="@/assets/image/longjinggongsource/content-1-1.png"
+              src="@/assets/image/longjinggongsource/龙井地图.png"
+              class="d-block w-100"
               alt="示例图"
             />
           </div>

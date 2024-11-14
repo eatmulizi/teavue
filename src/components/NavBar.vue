@@ -33,7 +33,7 @@
             <DropdownMenu title="产品中心" :dropdownData="ProductdropdownData"/>
           </li>
           <li>
-            <router-link to="/join" class="nav-link" @click="hideDropdown"
+            <router-link to="/ZhaoShang" class="nav-link" @click="hideDropdown"
               >招商加盟</router-link
             >
           </li>
@@ -76,15 +76,15 @@ export default {
         { name: '国礼贡牌', link: '/nationalgift', image: require('@/assets/image/public/菜单栏4.png'), description: '国礼尊荣 盛誉八方' }
       ],
       ProductdropdownData: [
-        { name: '狮峰龙井系列', link: '/', image: require('@/assets/image/public/菜单1.png'), description: '狮峰茶韵 至臻之选' },
-        { name: '西湖龙井系列', link: '/', image: require('@/assets/image/public/菜单2.png'), description: '西湖之域 龙井正宗' },
-        { name: '龙井茶系列', link: '/', image: require('@/assets/image/public/菜单3.png'), description: '龙井好茶 经典之味' },
-        { name: '其他茗茶', link: '/', image: require('@/assets/image/public/菜单4.png'), description: '茶韵多元 特色之魅' }
+        { name: '狮峰龙井系列', link: '/ProductNew', image: require('@/assets/image/public/菜单1.png'), description: '狮峰茶韵 至臻之选' },
+        { name: '西湖龙井系列', link: '/ProductNew', image: require('@/assets/image/public/菜单2.png'), description: '西湖之域 龙井正宗' },
+        { name: '龙井茶系列', link: '/ProductNew', image: require('@/assets/image/public/菜单3.png'), description: '龙井好茶 经典之味' },
+        { name: '其他茗茶', link: '/ProductNew', image: require('@/assets/image/public/菜单4.png'), description: '茶韵多元 特色之魅' }
       ],
       MediadropdownData: [
         { name: '', link: '', image: require('@/assets/image/public/null.png'), description: '' },
-        { name: '新闻发布', link: '', image: require('@/assets/image/public/新闻菜单1.png'), description: '品牌动态 媒体聚焦' },
-        { name: '社交媒体', link: '', image: require('@/assets/image/public/新闻菜单2.png'), description: '联系我们' },
+        { name: '新闻发布', link: 'NewsPublic', image: require('@/assets/image/public/新闻菜单1.png'), description: '品牌动态 媒体聚焦' },
+        { name: '社交媒体', link: 'MediaPage', image: require('@/assets/image/public/新闻菜单2.png'), description: '联系我们' },
         { name: '', link: '', image: require('@/assets/image/public/null.png'), description: '' }
       ],
     };
