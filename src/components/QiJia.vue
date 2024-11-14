@@ -8,6 +8,7 @@
       />
     </div>
     <div class="content-1">
+      <!--这里请用特效，图片要有渐入的特效，重要！-->
       <div class="text-content-1">
         <div class="title-content-1">
           <h1>百年传承 非遗技艺</h1>
@@ -111,14 +112,18 @@
             <h1>文化遗产 技艺非凡</h1>
           </div>
           <div class="p-content-2-5">
-            <p>西湖龙井茶，不仅汇聚了杭州西湖的自然灵气与文化精髓，更是承载了丰富
-的手工技艺与历史传承。2008 年 6 月，西湖龙井茶的手工炒制技艺被正式
-列为国家级非物质文化遗产，标志着这一传统工艺的珍贵价值及其在文化保
-护中的重要地位。</p>
-            <p>在众多炒制技艺中，戚氏炒制手法以其传统与严谨而著称，被视为特级西湖
-龙井茶的正宗炒制方法。这一手法深植于世代相传的智慧之中，经过十道精
-细工序的淬炼，从鲜叶的精心摊放至成品的严格筛选，每一步骤均体现了对
-完美的不懈追求。</p>
+            <p>
+              西湖龙井茶，不仅汇聚了杭州西湖的自然灵气与文化精髓，更是承载了丰富
+              的手工技艺与历史传承。2008 年 6 月，西湖龙井茶的手工炒制技艺被正式
+              列为国家级非物质文化遗产，标志着这一传统工艺的珍贵价值及其在文化保
+              护中的重要地位。
+            </p>
+            <p>
+              在众多炒制技艺中，戚氏炒制手法以其传统与严谨而著称，被视为特级西湖
+              龙井茶的正宗炒制方法。这一手法深植于世代相传的智慧之中，经过十道精
+              细工序的淬炼，从鲜叶的精心摊放至成品的严格筛选，每一步骤均体现了对
+              完美的不懈追求。
+            </p>
           </div>
         </div>
         <div class="img-content-2-5">
@@ -129,7 +134,7 @@
           />
         </div>
       </div>
-      <div class="content-2-6">
+<!--       <div class="content-2-6">
         <div class="text-content-2-6">
           <h1>十大工艺</h1>
         </div>
@@ -170,47 +175,49 @@
             />
           </div>
         </div>
-      </div>
-      <div class="content-2-7"></div>
-      <div class="text-content-2-7">
-        <h1>十大技法</h1>
-      </div>
-      <div class="img-content-2-7">
-        <div class="img-content-2-6">
-          <div class="img-ten">
-            <img
-              :src="require('@/assets/image/qifamily/content-4-1.png')"
-              class="d-block w-100"
-              alt="Image 1"
-            />
-          </div>
-          <div class="img-ten">
-            <img
-              :src="require('@/assets/image/qifamily/content-4-1.png')"
-              class="d-block w-100"
-              alt="Image 1"
-            />
-          </div>
-          <div class="img-ten">
-            <img
-              :src="require('@/assets/image/qifamily/content-4-1.png')"
-              class="d-block w-100"
-              alt="Image 1"
-            />
-          </div>
-          <div class="img-ten">
-            <img
-              :src="require('@/assets/image/qifamily/content-4-1.png')"
-              class="d-block w-100"
-              alt="Image 1"
-            />
-          </div>
-          <div class="img-ten">
-            <img
-              :src="require('@/assets/image/qifamily/content-4-1.png')"
-              class="d-block w-100"
-              alt="Image 1"
-            />
+      </div> -->
+      <div class="content-2-7">
+        <!-- 这里请用首页式的轮播特效，共5张图 -->
+        <div class="text-content-2-7">
+          <h1>十大技法</h1>
+        </div>
+        <div class="img-content-2-7">
+          <div class="img-content-2-6">
+            <div class="img-ten">
+              <img
+                :src="require('@/assets/image/qifamily/content-4-1.png')"
+                class="d-block w-100"
+                alt="Image 1"
+              />
+            </div>
+            <div class="img-ten">
+              <img
+                :src="require('@/assets/image/qifamily/content-4-1.png')"
+                class="d-block w-100"
+                alt="Image 1"
+              />
+            </div>
+            <div class="img-ten">
+              <img
+                :src="require('@/assets/image/qifamily/content-4-1.png')"
+                class="d-block w-100"
+                alt="Image 1"
+              />
+            </div>
+            <div class="img-ten">
+              <img
+                :src="require('@/assets/image/qifamily/content-4-1.png')"
+                class="d-block w-100"
+                alt="Image 1"
+              />
+            </div>
+            <div class="img-ten">
+              <img
+                :src="require('@/assets/image/qifamily/content-4-1.png')"
+                class="d-block w-100"
+                alt="Image 1"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -361,8 +368,8 @@ img {
 .text-content-2-3-right {
   margin-top: 3%;
 }
-.content-2-4{
-  margin-top:3%;
+.content-2-4 {
+  margin-top: 3%;
 }
 .content-2-5 {
   width: 100%; /* 设置宽度 */
@@ -375,8 +382,8 @@ img {
   box-sizing: border-box; /* 包括内边距和边框 */
   height: auto; /* 设置高度 */
 }
-.p-content-2-5{
-  margin-top:5%;
+.p-content-2-5 {
+  margin-top: 5%;
 }
 .img-content-2-5 {
   flex: 1; /* 等比占据 */
@@ -384,6 +391,7 @@ img {
   height: auto; /* 设置高度 */
   margin-left: 5%;
   height: auto;
+  margin-bottom: 5%;
 }
 .img-content-2-6 {
   width: 100%; /* 设置宽度 */

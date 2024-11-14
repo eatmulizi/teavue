@@ -16,16 +16,29 @@
             :key="typeof item === 'string' ? item : item.alt"
           >
             <span v-if="typeof item === 'string'">{{ item }}</span>
-            <img v-else :src="item.image" :alt="item.alt" />
-            <!-- 渲染图像 -->
+            <div class="image-container" v-else-if="item.images">
+              <img
+                v-for="(image, index) in item.images"
+                :key="index"
+                :src="image.image"
+                :alt="image.alt"
+                @click.stop="openModal(image)"
+                style="cursor: pointer; width: 25%; height: auto; margin-right: 10px;"
+              />
+            </div>
           </li>
         </ul>
       </div>
+
       <div class="footer-section">
         <h2>立即购买</h2>
         <ul class="buy-links">
-          <img class="buy-jd" src="@/assets/image/public/jingdong.png" alt="JD">
-          <img src="@/assets/image/public/tianmao.png" alt="Tmall">
+          <img
+            class="buy-jd"
+            src="@/assets/image/public/jingdong.png"
+            alt="JD"
+          />
+          <img src="@/assets/image/public/tianmao.png" alt="Tmall" />
         </ul>
       </div>
       <div class="footer-logo">
@@ -42,11 +55,22 @@
     <div class="beian">
       <p>贡牌西湖龙井茶官方网站 © ️版权所有 浙ICP备20003001号-1</p>
     </div>
+
+    <ModalBox
+      :isVisible="isModalVisible"
+      :qrCode="modalData.qrCode"
+      @close="closeModal"
+    />
   </div>
 </template>
 
 <script>
+import ModalBox from "./ModalBox.vue";
+
 export default {
+  components: {
+    ModalBox,
+  },
   data() {
     return {
       sections: [
@@ -71,21 +95,40 @@ export default {
           items: [
             "商务合作",
             "加入我们",
-            {
-              image: require("@/assets/image/public/wechat.png"),
-              alt: "微信二维码",
+            { 
+              images: [ // 确保使用 images 数组
+                {
+                  image: require("@/assets/image/public/wechat.png"), // 确保路径正确
+                  alt: "微信二维码",
+                  qrCode: require("@/assets/image/public/wechatQR.png"),
+                },
+                {
+                  image: require("@/assets/image/public/douyin.png"), // 确保路径正确
+                  alt: "抖音二维码",
+                  qrCode: require("@/assets/image/public/dyQR.png"),
+                },
+              ]
             },
-            {
-              image: require("@/assets/image/public/douyin.png"),
-              alt: "抖音二维码",
-            }, // 添加图片对象
           ],
         },
       ],
       companyLogo: require("@/assets/image/public/logo-bottom.png"),
       footline: require("@/assets/image/public/bottom-line.png"),
       footlogo: require("@/assets/image/public/logo_group_bottom.png"),
+      isModalVisible: false,
+      modalData: {
+        qrCode: "",
+      },
     };
+  },
+  methods: {
+    openModal(item) {
+      this.modalData.qrCode = item.qrCode;
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
+    },
   },
 };
 </script>
@@ -119,6 +162,10 @@ p {
   text-align: left;
   font-size: 21px;
 }
+.image-container {
+  display: flex; /* 使用 Flexbox 使图像横向排列 */
+  align-items: center; /* 垂直居中对齐 */
+}
 .footer-container {
   overflow: hidden;
   margin-top: 3%;
@@ -135,7 +182,7 @@ p {
   justify-content: space-between; /* 水平分布 */
   padding-top: 5%;
   padding-bottom: 5%;
-  width: 70%;
+  width: 100%;
 }
 .footer-top {
   width: 100%;
@@ -167,8 +214,8 @@ p {
 .footer-section ul li {
   color: #214815;
   margin-bottom: 10px;
-  cursor: pointer;
   font-size: 18px;
+  width: auto;
 }
 
 .footer-section ul li:hover {
@@ -176,9 +223,9 @@ p {
 }
 
 .footer-logo {
-  overflow: auto;
-  position: absolute;
-  padding-left: 75%;
+  margin-left: 10%; /* 使用 margin 进行位置调整 */
+  display: block; /* 确保块级元素 */
+  overflow: visible; /* 确保不遮盖 */
 }
 
 .footer-bottom {
@@ -210,7 +257,7 @@ p {
   display: block; /* 确保是块级元素 */
   width: 100%; /* 占据整个宽度 */
 }
-.buy-jd{
+.buy-jd {
   width: 50%;
   float: left;
   margin-left: -20%;

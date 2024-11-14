@@ -8,6 +8,7 @@
       />
     </div>
     <div class="content">
+      <!-- 这里请用图片渐入特效，重要！ -->
       <div class="content-left">
         <div class="content-left-1">
           <h1>国 礼 尊 荣&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;盛 誉 八 方</h1>

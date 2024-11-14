@@ -47,6 +47,7 @@
       </div>
     </div>
     <div class="content-2">
+      <!--这里请用走马灯式轮播图，共3张，下方是写死的2个div，可以删掉，现在文字和图合并成图片了-->
       <div class="content-2-left">
         <div>
           <div class="text-content-2-left">
@@ -124,16 +125,17 @@
             alt="示例图"
           />
         </div> -->
-        <!-- 用插件 -->
+        <!-- 这里请用首页式的轮播图，共2张 -->
         <lunboHistory :images="imageList" />
       </div>
     </div>
     <div class="content-4">
       <div class="text-content-4">
+        <!-- 这里请用首页式的轮播图，共2张 -->
         <div class="title-text-content-4">
           <h1>品牌荣誉</h1>
         </div>
-        <div class="p-text-content-4">
+        <!-- <div class="p-text-content-4">
           <p>
             2003 年被评为浙江省著名商标<br />
             2005 年获国际茶业博览会金奖<br />
@@ -151,7 +153,7 @@
             2011 年成为首批国际地理标志网络组织 (oriGIn) 国际会员<br />
             2013 年被评为“消费者最满意十大茶叶品牌”
           </p>
-        </div>
+        </div> -->
       </div>
       <div class="img-content-4">
         <img

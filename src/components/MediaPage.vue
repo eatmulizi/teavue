@@ -130,12 +130,11 @@
     width: 100%; /* 容器宽度 */
   }
   .flex-item{
-    width: 48%; /* 每个 item 的宽度 (48% 可以留出空间) */
+    width: 48%; /* 每个 item 的宽度*/
     height: auto; 
     display: flex;
     align-items: center; /* 垂直居中 */
     justify-content: center; /* 水平居中 */
-    margin-bottom: 10px; /* 下方间距 */
   }
   
   </style>
